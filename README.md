@@ -1,10 +1,11 @@
-$('#mydiv').adimate({
-    effect: 'hvr-wobble-vertical',
-    event: 'hover',
-    repeat: 'once',
-});
+    $('#mydiv').adimate({
+        effect: 'hvr-wobble-vertical',
+        event: 'hover',
+        repeat: 'once',
+    });
 
 Input 
+
 1. effect  - name of the event we support(mostly from hover.css)
              It can also support custom css class name as string or 
              an object with in and out parameters 
@@ -28,9 +29,13 @@ Input
 
 
 Returns
+
 1. start() - will run irrespective of event
+
 2. stop()  - will permanently stop the event
+
 3. watch() - will cycle back to event mode
+
 
 
 
