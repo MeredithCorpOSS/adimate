@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Adimate</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #mydiv {
+                padding:20px;
+                border: 1px solid #777;
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> 77777</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> 77777</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+                <div id="mydiv" >
+
+            Thsi is a dummy div to test out changes 
+
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script>
+            (function ( $ ) {
+
+
+                function elementInViewport(el) {
+                    var top = el.offsetTop;
+                    var left = el.offsetLeft;
+                    var width = el.offsetWidth;
+                    var height = el.offsetHeight;
+
+                    while(el.offsetParent) {
+                        el = el.offsetParent;
+                        top += el.offsetTop;
+                        left += el.offsetLeft;
+                    }
+
+                    return (
+                        top < (window.pageYOffset + window.innerHeight) &&
+                        left < (window.pageXOffset + window.innerWidth) &&
+                        (top + height) > window.pageYOffset &&
+                        (left + width) > window.pageXOffset
+                    );
+                }
+ 
+                $.fn.adimate  = function( options ) {
+            
+                    // This is the easiest way to have default options.
+                    var settings = $.extend({
+                        effect: 'hvr-pulse'
+                    }, options );
+
+                    var el = this;
+
+                    if (!$('body').hasClass('has-adimate')) {
+                        var css_link = $("<link>", {
+                            rel: "stylesheet",
+                            type: "text/css",
+                            href: "gen/hover.css"
+                        });
+                        css_link.appendTo('head');
+
+                        $('body').addClass('has-adimate');
+                    }
+
+
+                    $(window).on('scroll', function() {
+                        if(elementInViewport(document.querySelector(el.selector))) {
+                            el.addClass(settings.effect);
+                        } else {
+                            el.removeClass(settings.effect);
+                        }
+                    });
+            
+                };
+            
+            }( jQuery ));
+
+            $('#mydiv').adimate({
+                effect: 'hvr-wobble-vertical',
+                css: {
+                    'in': 'class-name',
+                    'out': 'class-name'
+                }
+            });
+        </script>
+    </body>
+</html>
+
+events
+run and stop animation
+effect
+css_class
+no_of_times
