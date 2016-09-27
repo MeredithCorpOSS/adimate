@@ -21,8 +21,11 @@ Input
 3. repeat  - once, continious or no of times
 4. devices - mobile, tablet, desktop, all
 5. notify  - supports multiple events 
+
              1. onEnter()
+             
              2. onLeave()
+             
              3. onDone()
 
 
