@@ -1,7 +1,7 @@
     $('#mydiv').adimate({
         effect: 'hvr-wobble-vertical',
         event: 'hover',
-        repeat: 'once',
+        repeat: 1,
     });
 
 Input 
@@ -18,26 +18,33 @@ Input
                  }
 2. event   - on what event do we need to execute the effect
              supported values 'hover', 'infullviewport', 'inpartialviewport', 'load'
-3. repeat  - once, continious or no of times
+3. repeat  - 1 or no of times, if 0 considered infinite 
 4. devices - mobile, tablet, desktop, all
-5. notify  - supports multiple events 
+4. interval - 
 
-             1. onEnter()
+Events
+supports multiple events 
+
+             1. onAnimationStart
              
-             2. onLeave()
-             
-             3. onDone()
+             2. onAnimationStop
+
+             3. onDone
+             4. onStart
 
 
 
 
-Returns
+Methods
 
 1. start() - will run irrespective of event
 
 2. stop()  - will permanently stop the event
 
 3. watch() - will cycle back to event mode
+
+4. get() - 
+5. set() -
 
 
 
